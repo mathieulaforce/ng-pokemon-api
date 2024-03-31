@@ -13,9 +13,15 @@ import { PokemonDialogComponent } from '../pokemon-dialog/pokemon-dialog.compone
   template: `
     @if(!isLoading && pokemons.length){
     <div
-      class="gap-6 items-center justify-center grid grid-cols-[repeat(2,minmax(200px,200px))]
+      class="gap-6 items-center justify-center grid 
+        grid-cols-1
+        sm:grid-cols-[repeat(2,minmax(200px,200px))]
          md:grid-cols-[repeat(3,minmax(200px,251px))]
-        xl:grid-cols-[repeat(4,minmax(200px,251px))] 2xl:grid-cols-[repeat(6,minmax(200px,251px))] bg-white rounded-sm p-6"
+        xl:grid-cols-[repeat(4,minmax(200px,251px))] 
+        2xl:grid-cols-[repeat(6,minmax(200px,251px))] 
+        bg-white rounded-md 
+        p-2
+        sm:p-6"
     >
       @for(pokemon of pokemons; track pokemon.id){
       <app-pokemon-list-item

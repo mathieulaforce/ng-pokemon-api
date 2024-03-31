@@ -23,7 +23,7 @@ import { PokemonListItem } from '../../../pokemon-shared.service';
           </ul>
           <div
             class="bg-pokedexRed rounded-md size-full"
-            [style.width.%]="(stat.base_stat / 100) * 100"
+            [style.width.%]="(stat.base_stat / 150) * 100"
           ></div>
         </div>
       </div>
