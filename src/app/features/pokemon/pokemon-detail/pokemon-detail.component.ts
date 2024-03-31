@@ -1,24 +1,21 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { TitleCasePipe } from '@angular/common';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core'; 
 import {
   PokemonListItem,
   PokemonSharedService,
-} from '../../../pokemon-shared.service';
-import { PokemonTypeTagDirective } from '../../ui/pokemon-type-tag.directive';
-import { PadLeftPipe } from '../../../pad-left.pipe'; 
-import { SvgIconComponent } from '../../ui/icons/svg-icon/svg-icon.component';
+} from '../../../pokemon-shared.service'; 
 import { Subscription } from 'rxjs';
 import { PokemonHeaderComponent } from './pokemon-header.component';
 import { PokemonPortraitComponent } from './pokemon-portrait.component';
 import { PokemonMeasurementsComponent } from './pokemon-measurements.component';
 import { PokemonStatsComponent } from './pokemon-stats.component';
+import { LoadingSpinnerComponent } from '../../ui/loading-spinner/loading-spinner.component';
 
 @Component({
   selector: 'app-pokemon-detail',
   standalone: true,
   template: `
-  @if (pokemon === undefined) {
-
+  @if (isLoading) {
+    <ui-loading-spinner></ui-loading-spinner>
   }
   @else if (pokemon === null) {
     <div class="gap-4 bg-card rounded-xl size-64">Pokemon Not found</div>
@@ -38,15 +35,12 @@ import { PokemonStatsComponent } from './pokemon-stats.component';
     } `,
   styles: ` 
   `,
-  imports: [
-    PokemonTypeTagDirective,
-    PadLeftPipe,
-    TitleCasePipe,
-    SvgIconComponent,
+  imports: [ 
     PokemonHeaderComponent,
     PokemonPortraitComponent,
     PokemonMeasurementsComponent,
-    PokemonStatsComponent
+    PokemonStatsComponent,
+    LoadingSpinnerComponent
   ],
 })
 export class PokemonDetailComponent implements OnInit, OnDestroy {
