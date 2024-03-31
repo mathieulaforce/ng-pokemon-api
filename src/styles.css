@@ -1,1 +1,142 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/cdk/overlay-prebuilt.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+:root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 3.9%;
+  
+    --card: 205.71, 28%, 95.1%;
+    --card-foreground: 0 0% 3.9%;
+ 
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+ 
+    --primary: 0 0% 9%;
+    --primary-foreground: 0 0% 98%;
+ 
+    --secondary: 0 0% 96.1%;
+    --secondary-foreground: 0 0% 9%;
+ 
+    --muted: 0 0% 96.1%;
+    --muted-foreground: 0 0% 45.1%;
+ 
+    --accent: 0 0% 96.1%;
+    --accent-foreground: 0 0% 9%;
+ 
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --type-bug: 76 45% 51%;
+    --type-bug-foreground: 76 45% 51%;
+    --type-dark: 252 5% 36%;
+    --type-dark-foreground: 252 5% 36%;
+    --type-dragon: 215 63% 46%;
+    --type-dragon-foreground: 215 63% 46%;
+    --type-electric: 51 65% 52%;
+    --type-electric-foreground: 51 65% 52%;
+    --type-fairy: 301 57% 74%;
+    --type-fairy-foreground: 301 57% 74%;
+    --type-fighting: 350 50% 54%;
+    --type-fighting-foreground: 350 50% 54%;
+    --type-ground: 21 55% 57%;
+    --type-ground-foreground: 21 55% 57%;
+    --type-ice-foreground: 168 35% 59%;
+    --type-ice-foreground: 168 35% 59%;
+    --type-normal: 0 0% 56%;
+    --type-normal-foreground: 0 0% 56%;
+    --type-poison: 281 48% 60%;
+    --type-poison-foreground: 281 48% 60%;
+    --type-psychic: 4 72% 72%;
+    --type-psychic-foreground: 4 72% 72%;
+    --type-rock-foreground: 169 31% 63%;
+    --type-rock: 169 31% 63%;
+    --type-ghost: 231 37% 55%;
+    --type-ghost-foreground: 231 37% 55%;
+    --type-grass: 108 38% 55%;
+    --type-grass-foreground: 108 38% 55%;
+    --type-steel: 193 24% 51%;
+    --type-steel-foreground: 193 24% 51%;
+    --type-water: 218 46% 53%;
+    --type-water-foreground: 218 46% 53%;
+    --type-fire: 25 97% 46%;
+    --type-fire-foreground: 25 97% 46%;
+    --type-flying: 221 35% 60%;
+    --type-flying-foreground: 221 35% 60%;
+
+    --pokedex-red: 350 91% 45%;
+
+    --border: 0 0% 89.8%;
+    --input: 0 0% 89.8%;
+    --ring: 0 0% 3.9%;
+ 
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+ 
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+ 
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+ 
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+ 
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+ 
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+ 
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+ 
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+ 
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+        
+  }
+}
+
+@layer base { 
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+   
+  }
+
+
+  cdk-dialog-container:focus-visible {
+    outline: none;
+  }
+
+  .animate-gradient {
+    background-size: 300%;
+    -webkit-animation: animatedgradient 6s ease infinite alternate;
+    -moz-animation: animatedgradient 6s ease infinite alternate;
+    animation: animatedgradient 6s ease infinite alternate;
+  }
+  
+  @keyframes animatedgradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
