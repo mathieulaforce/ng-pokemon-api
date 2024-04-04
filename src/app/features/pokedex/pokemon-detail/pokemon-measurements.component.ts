@@ -1,7 +1,7 @@
 import { DecimalPipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { ConvertLengthPipe, ConvertWeightPipe } from '../../../dataConversionPipes';
-import { PokemonListItem } from '../../../pokemon-shared.service';
+import { PokemonListItem } from '../../pokemon/pokemon-shared.service';
 
 @Component({
   selector: 'app-pokemon-measurements',

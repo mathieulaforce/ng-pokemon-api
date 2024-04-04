@@ -36,14 +36,19 @@ export class PokemonSharedService {
 
   constructor(private apiService: PokemonApiService) {}
 
-  public loadData() {
+  public loadData() { 
     if (this.pokemonList.value.length === 0) {
       this.loadingData.next(true);
       const limit = 100;
       let offset = 0;
       this.fetchAllPokemons(offset, limit);
-      this.apiService.fetchTypes();
+      this.resetFilter();
+      this.apiService.fetchTypes();      
     }
+  }
+
+  public resetFilter() {
+    this.pokemonListToDisplay.next(this.pokemonList.value);
   }
 
   public filterPokemons(filter: PokemonFilter) {
@@ -60,7 +65,7 @@ export class PokemonSharedService {
     if (filter.types && filter.types.length > 0) {
       const types = filter.types;
       filteredPokemons = filteredPokemons.filter((pokemon) =>
-        pokemon.types.some((type) => types.includes(type.name))
+        types.every((type) => pokemon.types.map(t=>t.name).includes(type))
       );
     }
 

@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import {
   PokemonListItem,
   PokemonSharedService,
-} from '../../../pokemon-shared.service'; 
+} from '../../pokemon/pokemon-shared.service'; 
 import { Subscription } from 'rxjs';
 import { PokemonHeaderComponent } from './pokemon-header.component';
 import { PokemonPortraitComponent } from './pokemon-portrait.component';

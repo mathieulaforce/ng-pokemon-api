@@ -11,9 +11,9 @@ import { Subject, debounceTime, distinctUntilChanged } from 'rxjs';
 import {
   PokemonFilter,
   PokemonSharedService,
-} from '../../../pokemon-shared.service';
+} from '../../pokemon-shared.service';
 import { PokemonTypefilterMenuComponent } from './pokemon-typefilter-menu.component';
-import { InputDirective } from '../../ui/input.directive';
+import { InputDirective } from '../../../ui/input.directive';
 
 @Component({
   selector: 'app-pokemon-filter',
@@ -58,7 +58,7 @@ export class PokemonFilterComponent implements OnInit, OnDestroy {
 
   constructor(private pokemonSharedService: PokemonSharedService) {}
   ngOnDestroy(): void {
-    this.filterSubject.complete();
+    this.filterSubject.complete(); 
   }
   ngOnInit(): void {
     this.filterSubject

@@ -7,11 +7,10 @@ import {
   CdkMenuTrigger,
   CdkMenuItem,
   CdkMenuBar,
-} from '@angular/cdk/menu';
-import { PokemonTypeTagDirective } from '../../ui/pokemon-type-tag.directive';
+} from '@angular/cdk/menu'; 
 import { NgIconComponent, provideIcons } from '@ng-icons/core';
-import { faSolidXmark } from '@ng-icons/font-awesome/solid';
-import { InputDirective } from '../../ui/input.directive';
+import { faSolidXmark } from '@ng-icons/font-awesome/solid'; 
+import { UiModule } from '../../../ui/ui.module';
 @Component({
   selector: 'app-pokemon-typefilter-menu',
   standalone: true,
@@ -23,10 +22,9 @@ import { InputDirective } from '../../ui/input.directive';
     CdkMenu,
     CdkMenuGroup,
     CdkMenuItemCheckbox,
-    CdkMenuItemRadio,
-    PokemonTypeTagDirective,
-    NgIconComponent,
-    InputDirective,
+    CdkMenuItemRadio, 
+    NgIconComponent, 
+    UiModule
   ],
   template: `
     <div class="">

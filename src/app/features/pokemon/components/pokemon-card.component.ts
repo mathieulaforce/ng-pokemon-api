@@ -1,28 +1,26 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core'; 
 import { PadLeftPipe } from '../../../pad-left.pipe';
-import { PokemonListItem } from '../../../pokemon-shared.service';
-import { PokemonTypeTagDirective } from '../../ui/pokemon-type-tag.directive';
-import { SkeletonDirective } from '../../ui/skeleton.directive';
-import { NgOptimizedImage, TitleCasePipe } from '@angular/common'
-import CardDirectives from '../../ui/card';
+import { PokemonListItem } from '../../pokemon/pokemon-shared.service'; 
+import { CommonModule, NgOptimizedImage, TitleCasePipe } from '@angular/common'
+import { UiModule } from '../../ui/ui.module';
+ 
 @Component({
-  selector: 'app-pokemon-list-item',
+  selector: 'app-pokemon-card',
   standalone: true,
+  changeDetection: ChangeDetectionStrategy.OnPush,
   template: `
     <div
       uiCard
-      class="
-      cursor-pointer 
-      hover:scale-105 hover:shadow-lg transition-all duration-500 ease-in-out " 
+      [ngClass]="{'cursor-pointer md:hover:scale-105 hover:shadow-lg transition-all duration-500 ease-in-out ': true,
+      'p-2 gap-2': isCondensed()}"       
     >
-      <div uiCardHeader class="text-center">
+      <div uiCardHeader [ngClass]="{'text-center': true, 'p-2 gap-0  !space-y-0' : isCondensed()}">
         <div uiCardDescription>
           No. {{ pokemon.id | padLeft : '0' : 3 }}
         </div>
         <div  uiCardTitle class="font-medium text-xl">{{ pokemon.name | titlecase }}</div>
       </div>
-      <div uiCardContent class="relative size-36">
+      <div uiCardContent [ngClass]="{'relative': true, 'size-36': !isCondensed(), 'size-28': isCondensed()} ">
         <div
           [class]="
             'rounded-full size-full bg-' +
@@ -39,7 +37,7 @@ import CardDirectives from '../../ui/card';
         />
       </div>
 
-      <div uiCardFooter class="flex gap-2">
+      <div uiCardFooter class="flex gap-2 p-2">
         @if(pokemon.types.length){ @for(type of pokemon.types; track $index){
         <div uiPokemonTypeTag [variant]="type.name" class="">
           {{ type.name }}
@@ -51,18 +49,21 @@ import CardDirectives from '../../ui/card';
     </div>
   `,
   styles: ``,
-  imports: [
-    RouterLink,
-    PadLeftPipe,
-    PokemonTypeTagDirective,
-    SkeletonDirective,
+  imports: [ 
+    PadLeftPipe, 
     NgOptimizedImage,
-    CardDirectives,
-    TitleCasePipe
+    UiModule,
+    TitleCasePipe,
+    CommonModule
   ],
 })
-export class PokemonListItemComponent {
+export class PokemonCardComponent {
   @Input() pokemon!: PokemonListItem; 
+  @Input() density: "condensed" | "normal" = "normal"; 
+
+  public isCondensed(): boolean {
+    return this.density === 'condensed';
+  }
 
   getFirstSlotOrDefaultType(): string {
     return this.pokemon.types.length ? this.pokemon.types[0].name : 'normal';

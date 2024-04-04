@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PokemonListItem } from '../../../pokemon-shared.service';
+import { PokemonListItem } from '../../pokemon/pokemon-shared.service';
 import { PadLeftPipe } from '../../../pad-left.pipe';
 import { TitleCasePipe } from '@angular/common';
 import { PokemonTypeTagDirective } from '../../ui/pokemon-type-tag.directive';

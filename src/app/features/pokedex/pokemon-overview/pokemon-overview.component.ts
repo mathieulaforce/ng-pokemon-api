@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { PokemonListComponent } from '../pokemon-list/pokemon-list.component';
-import { PokemonFilterComponent } from '../pokemon-filter/pokemon-filter.component';
+import { PokemonFilterComponent } from '../../pokemon/components/pokemon-filter/pokemon-filter.component';
 @Component({
   selector: 'app-pokemon-overview',
   standalone: true,

@@ -1,6 +1,6 @@
 import { TitleCasePipe } from '@angular/common';
 import { Component, Input } from '@angular/core';
-import { PokemonListItem } from '../../../pokemon-shared.service';
+import { PokemonListItem } from '../../pokemon/pokemon-shared.service';
 
 @Component({
   selector: 'app-pokemon-stats',
@@ -23,7 +23,7 @@ import { PokemonListItem } from '../../../pokemon-shared.service';
           </ul>
           <div
             class="bg-pokedexRed rounded-md size-full"
-            [style.width.%]="(stat.base_stat / 150) * 100"
+            [style.width.%]="(stat.base_stat / 255) * 100"
           ></div>
         </div>
       </div>

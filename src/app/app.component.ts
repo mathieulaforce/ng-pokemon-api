@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { PokemonOverviewComponent } from './features/pokemon/pokemon-overview/pokemon-overview.component';
+import { PokemonOverviewComponent } from './features/pokedex/pokemon-overview/pokemon-overview.component';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -19,18 +19,15 @@ import { FormsModule } from '@angular/forms';
                 <a
                   class="transition-colors hover:text-white/80 "
                   [routerLink]="['/']"
-                  [routerLinkActive]="['text-white/100']"
+                  routerLinkActive="!text-white/100"
+                  [routerLinkActiveOptions]="{exact: true}"
                   >pokédex</a>
                   <a
                   class="transition-colors hover:text-white/80 text-white/60"
-                  [routerLink]="['/pokedex']"
-                  [routerLinkActive]="['important:text-white']"
-                  >pokédex</a>
-                  <a
-                  class="transition-colors hover:text-white/80 text-white/60"
-                  [routerLink]="['/']"
-                  [routerLinkActive]="['important:text-white']"
-                  >pokédex</a>
+                  [routerLink]="['/yourTeam']"
+                  routerLinkActive="!text-white/100"
+                  >Your team</a>
+                 
               </nav>
             </div> 
           </div>

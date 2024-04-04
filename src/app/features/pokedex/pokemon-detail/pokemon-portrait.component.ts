@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { PokemonListItem } from '../../../pokemon-shared.service'; 
+import { PokemonListItem } from '../../pokemon/pokemon-shared.service'; 
 import { SvgIconComponent } from '../../ui/icons/svg-icon/svg-icon.component';
 @Component({
   selector: 'app-pokemon-portrait',
@@ -13,7 +13,7 @@ import { SvgIconComponent } from '../../ui/icons/svg-icon/svg-icon.component';
         ">
         <div class="absolute left-0 top-0 bottom-0 right-0 overflow-hidden rounded-l-xl">
           <div
-            class="absolute opacity-30 size-[150%] bg-gradient-to-br  from-white to-black animate-gradient animate-pulse"
+            class="absolute opacity-30 size-[150%] bg-gradient-to-br -top-1/4 -left-1/4 from-white to-black animate-gradient animate-pulse"
           ></div>
           <div
             class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none w-64"
